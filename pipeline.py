@@ -18,7 +18,9 @@ def get_study_level_data(study_type):
     study_data = {}
     study_label = {'positive': 1, 'negative': 0}
     for phase in data_cat:
-        BASE_DIR = '/content/drive/My\ Drive/MURA-v1.0/%s/%s/' % (phase, study_type)
+        BASE_DIR = '/content/drive/My Drive/MURA-v1.0/%s/%s/' % (phase, study_type)
+        
+        print(BASE_DIR)
         patients = list(os.walk(BASE_DIR))[0][1] # list of patient folder names
         study_data[phase] = pd.DataFrame(columns=['Path', 'Count', 'Label'])
         i = 0
